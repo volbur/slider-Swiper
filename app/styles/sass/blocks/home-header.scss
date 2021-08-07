@@ -7,6 +7,7 @@ html {
   background-color: $deep;
   height: 100%;
   color: #fff;
+  padding-top: $size;
 }
 
 .top-line {
@@ -117,4 +118,140 @@ html {
 
 .top-line__text {
   color: rgba(#fff, 0.75);
+}
+
+//ASIDE
+
+.home-header__content {
+  height: 100%;
+}
+
+.home-aside {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: $size;
+  width: $size;
+  height: 100%;
+  background-color: $dark;
+  z-index: 5;
+}
+
+.home-aside__decoration {
+  flex: 1 0 0;
+  width: 100%;
+  background-image: url(../images/dist/decoration-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 70px;
+}
+
+.home-aside__soc {
+  flex: 1 0 0;
+}
+
+.home-aside__share-icon {
+  background-color: $accent;
+  width: $size;
+  flex: 0 0 $size;
+  background-image: url(../images/dist/share-solid.svg);
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.soc-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(#fff, $border-opacity);
+  border-bottom: 1px solid transparent;
+  transition: background 0.5s ease-out;
+  &:last-child {
+    border-bottom: 1px solid rgba(#fff, $border-opacity);
+  }
+  img {
+    width: 15px;
+    height: auto;
+    max-height: 15px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease-out;
+  }
+  &:hover {
+    background-color: $accent;
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+// SLIDER
+
+.slider-container {
+  position: relative;
+  padding-left: $size;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-bottom {
+  position: absolute;
+  left: $size;
+  display: flex;
+  bottom: 0;
+  height: $size;
+  width: calc(75% - #{$size});
+  align-items: center;
+  background-color: #666;
+  z-index: 5;
+}
+
+.slider-share {
+  flex: 0 1 auto;
+}
+
+.slider-pagination {
+  flex: 0 0 140px;
+}
+
+.slider-scrollbar {
+  flex: 1 0 0;
+}
+
+.slider-navigation {
+  flex: 0 0 140px;
+}
+
+.slider-share__items {
+  display: flex;
+}
+
+.slider-share__item {
+  width: $size;
+  height: $size;
+  border: none;
+  background-color: $dark;
+  border-right: 1px solid rgba(#fff, $border-opacity);
+  margin-left: -0.5px;
+  &:last-child {
+    position: relative;
+    border-bottom: none;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -1px;
+      display: inline-block;
+      width: 3px;
+      height: 100%;
+      background-color: $accent;
+    }
+  }
 }
