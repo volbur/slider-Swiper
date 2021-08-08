@@ -247,7 +247,7 @@ html {
 }
 
 .slider-img {
-  position: absolute;
+  position: relative;
   height: 100%;
   width: 75%;
   overflow: hidden;
@@ -272,4 +272,48 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.slider-text {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - #{$size});
+  z-index: 3;
+}
+
+.slider-text__slide {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider-text__content {
+  padding-right: 22%;
+  text-align: right;
+}
+
+.slider-text__heading {
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 120%;
+  max-width: 780px;
+  float: right;
+  span {
+    white-space: nowrap;
+    color: $accent;
+  }
+}
+
+.slider-text__desc {
+  float: right;
+  max-width: 500px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.slider-text__button {
+  float: right;
+  clear: both;
 }
