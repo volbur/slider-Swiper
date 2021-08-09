@@ -3,11 +3,16 @@ html {
   height: 100%;
 }
 
+// TOP LINE
+
 .home-header {
   background-color: $deep;
   height: 100%;
   color: #fff;
   padding-top: $size;
+  @include media-breakpoint-down(sm) {
+    padding-top: $size-sm;
+  }
 }
 
 .top-line {
@@ -20,6 +25,9 @@ html {
   border-bottom: 1px solid rgba(#fff, $border-opacity);
   z-index: 10;
   background-color: $deep;
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+  }
 }
 
 .logo {
@@ -36,6 +44,9 @@ html {
   &:focus {
     color: #fff;
   }
+  @include media-breakpoint-down(sm) {
+    flex: 1 0 0;
+  }
 }
 
 .logo__img-wrapper {
@@ -44,6 +55,10 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
 }
 
 .logo__images {
@@ -51,11 +66,23 @@ html {
   height: 50px;
 }
 
+.logo__text {
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
 .menu-button-container {
   position: relative;
   flex: 0 0 200px;
   height: $size;
   text-align: right;
+  @include media-breakpoint-down(sm) {
+    height: $size-sm;
+  }
+  @include media-breakpoint-down(md) {
+    flex: 1 0 0;
+  }
 }
 
 .menu-button {
@@ -72,6 +99,10 @@ html {
   &:hover {
     background-color: $accent;
   }
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
 }
 
 .top-line__decoration {
@@ -84,6 +115,16 @@ html {
     width: 50px;
     background-color: #fff;
     opacity: $border-opacity;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .top-line__adress,
+  .top-line__separator {
+    display: none;
   }
 }
 
@@ -138,6 +179,10 @@ html {
   height: 100%;
   background-color: $dark;
   z-index: 5;
+  @include media-breakpoint-down(sm) {
+    padding-top: $size-sm;
+    width: $size-sm;
+  }
 }
 
 .home-aside__decoration {
@@ -147,10 +192,16 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50px 70px;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .home-aside__soc {
   flex: 1 0 0;
+  @include media-breakpoint-down(sm) {
+    margin-top: 40px;
+  }
 }
 
 .home-aside__share-icon {
@@ -161,6 +212,10 @@ html {
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: center;
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    flex: 0 0 $size-sm;
+  }
 }
 
 .soc-item {
@@ -199,6 +254,9 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  @include media-breakpoint-down(sm) {
+    padding-left: $size-sm;
+  }
 }
 
 .slider-bottom {
@@ -210,6 +268,11 @@ html {
   width: calc(75% - #{$size});
   align-items: center;
   z-index: 5;
+  @include media-breakpoint-down(sm) {
+    left: $size-sm;
+    height: $size-sm;
+    width: 100%;
+  }
 }
 
 .slider-share {
@@ -226,6 +289,9 @@ html {
     top: -1px;
     height: 3px;
     background-color: $accent;
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
 
@@ -262,6 +328,9 @@ html {
   .swiper-button-next {
     right: 0;
   }
+  @include media-breakpoint-down(sm) {
+    left: -20px;
+  }
 }
 
 .slider-share__items {
@@ -279,6 +348,10 @@ html {
     border-bottom: none;
     border-right: 3px solid $accent;
   }
+  @include media-breakpoint-down(sm) {
+    width: $size-sm;
+    height: $size-sm;
+  }
 }
 
 .slider-img {
@@ -293,6 +366,9 @@ html {
     height: 100%;
     background-color: rgba(#000, 0.45);
     z-index: 2;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 100%;
   }
 }
 
@@ -314,6 +390,9 @@ html {
   width: 100%;
   height: calc(100% - #{$size});
   z-index: 3;
+  @include media-breakpoint-down(sm) {
+    height: calc(100% - #{$size-sm});
+  }
 }
 
 .slider-text__slide {
@@ -325,17 +404,32 @@ html {
 .slider-text__content {
   padding-right: 22%;
   text-align: right;
+  @include media-breakpoint-down(sm) {
+    padding-left: 20px;
+  }
 }
 
 .slider-text__heading {
+  width: 100%;
   text-transform: uppercase;
   font-size: 60px;
   line-height: 120%;
   max-width: 780px;
   float: right;
+  clear: both;
   span {
     white-space: nowrap;
     color: $accent;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 50px;
+    max-width: 500px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
+  }
+  @include media-breakpoint-down(xs) {
+    font-size: 28px;
   }
 }
 
@@ -347,6 +441,9 @@ html {
   margin-top: 15px;
   margin-bottom: 20px;
   clear: both;
+  @include media-breakpoint-down(sm) {
+    font-size: 12px;
+  }
 }
 
 .slider-text__button {
@@ -382,6 +479,10 @@ html {
       border-radius: 50%;
     }
   }
+  @include media-breakpoint-down(sm) {
+    display: none;
+    height: $size-sm;
+  }
 }
 
 .slider-gear {
@@ -395,12 +496,15 @@ html {
   background-size: cover;
   background-position: center;
   z-index: 2;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 .slider-pagination-count {
   position: absolute;
-  right: 45px;
   top: 30px;
+  right: 45px;
   width: 120px;
   height: 68px;
   font-size: 24px;
@@ -411,6 +515,14 @@ html {
     min-width: 42px;
     font-size: 40px;
     color: $accent;
+  }
+  @include media-breakpoint-down(md) {
+    top: 0;
+    right: 0;
+    transform: scale(0.6);
+  }
+  @include media-breakpoint-down(sm) {
+    display: none;
   }
 }
 
@@ -424,5 +536,10 @@ html {
   &__dot {
     color: $accent;
     -webkit-text-stroke: 1px transparent;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 50px;
+    bottom: 0;
+    right: 20px;
   }
 }
